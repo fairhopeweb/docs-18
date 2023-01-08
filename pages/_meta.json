@@ -1,0 +1,16 @@
+{
+  "docs": {
+    "title": "Documentation",
+    "type": "page"
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "join": {
+    "title": "Subscribe",
+    "type": "page",
+    "href": "/#join",
+    "newWindow": true
+  }
+}
