@@ -13,13 +13,5 @@ module.exports = withNextra({
   experimental: {},
 
   assetPrefix: process.env.ASSET_CDN || undefined,
-
-  publicRuntimeConfig: {
-    NODE_ENV: process.env.NODE_ENV,
-
-    // SEGMENT_TAG_WRITE_KEY: process.env.SEGMENT_TAG_WRITE_KEY,
-    // GOOGLE_TAG_MANAGER_ID: process.env.GOOGLE_TAG_MANAGER_ID,
-    // MIXPANEL_TAG_ID: process.env.MIXPANEL_TAG_ID,
-  },
   output: 'standalone',
 });

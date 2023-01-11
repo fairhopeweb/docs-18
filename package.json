@@ -8,6 +8,7 @@
     "prepare": "yarn prepare:ts && yarn prepare:git",
     "prepare:ts": "ts-patch install -s",
     "prepare:git": "husky install || echo \"skip husky\"",
+    "start": "next start",
     "dev": "next dev",
     "build": "next build",
     "lint": "eslint . --ext \"js,jsx,ts,tsx,mjs,cjs\"",
