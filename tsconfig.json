@@ -3,6 +3,13 @@
   "compilerOptions": {
     "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "prism/states.js",
+    "pages/docs/get-started/engine.mdx",
+    "pages/docs/get-started/store.mdx"
+  ],
   "exclude": ["node_modules", ".next", "**/__ignore__/**"]
 }

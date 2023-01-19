@@ -1,3 +1,7 @@
 {
-  "setup": "Project set up"
+  "setup": "Project set up",
+  "states": "Define states",
+  "mutations": "Adding mutations",
+  "store": "Configuring the store",
+  "engine": "Using the engine"
 }
