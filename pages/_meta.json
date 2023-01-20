@@ -2,7 +2,8 @@
   "overview": {
     "title": "Overview",
     "type": "page",
-    "href": "/"
+    "href": "/",
+    "newWindow": true
   },
   "docs": {
     "title": "Documentation",
