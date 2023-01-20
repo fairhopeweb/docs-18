@@ -1,14 +1,15 @@
 {
+  "overview": {
+    "title": "Overview",
+    "type": "page",
+    "href": "/"
+  },
   "docs": {
     "title": "Documentation",
     "type": "page"
   },
-  "about": {
-    "title": "About",
-    "type": "page"
-  },
   "join": {
-    "title": "Subscribe",
+    "title": "Community",
     "type": "page",
     "href": "/#join",
     "newWindow": true
