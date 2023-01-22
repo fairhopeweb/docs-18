@@ -69,12 +69,12 @@ my-project
 
 ## Build scripts
 
-In order to compile your TypeScript code and build the `*.states` files, you can add the following scripts to your `package.json` file:
+In order to compile your TypeScript code and generate code from your `*.states` files, you can add the following scripts to your `package.json` file:
 
 ```json filename="package.json"
 {
   "scripts": {
-    "generate:states": "states build --output \"src/states.codegen.ts\" \"states/**/*.states\"",
+    "generate:states": "states --output \"src/states.codegen.ts\" \"states/**/*.states\"",
     "build": "tsc && npm run generate:states",
     "watch": "tsc --watch"
   }
