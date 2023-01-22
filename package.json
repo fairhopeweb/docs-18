@@ -21,7 +21,8 @@
     "nextra": "^2.0.3",
     "nextra-theme-docs": "^2.0.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "vscode-neuledge-states": "^0.0.3"
   },
   "devDependencies": {
     "@neuledge/eslint-config-next": "^1.0.0-alpha.18",

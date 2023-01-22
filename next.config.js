@@ -1,7 +1,7 @@
 /* eslint-disable unicorn/prefer-module, @typescript-eslint/no-var-requires */
 
 const { getHighlighter, BUNDLED_LANGUAGES } = require('shiki');
-const grammar = require('./shiki-languages/neuledge.json');
+const grammar = require('vscode-neuledge-states/syntaxes/states.tmLanguage.json');
 
 const rehypePrettyCodeOptions = {
   getHighlighter: (options) =>

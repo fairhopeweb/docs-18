@@ -4544,6 +4544,11 @@ vfile@^5.0.0:
     unist-util-stringify-position "^3.0.0"
     vfile-message "^3.0.0"
 
+vscode-neuledge-states@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vscode-neuledge-states/-/vscode-neuledge-states-0.0.3.tgz#284065f42497afda2d7d5c2f5e2e307993d92a49"
+  integrity sha512-yDiyIJo1n6fY1ZDPDZ8c6OLkc1TjtVYeSgtwZokFZWFnAVoKZFU2PUAMQ9mBj+0LYQe3/n6dSPvk8x5a5+7Cpw==
+
 vscode-oniguruma@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/vscode-oniguruma/-/vscode-oniguruma-1.7.0.tgz#439bfad8fe71abd7798338d1cd3dc53a8beea94b"
