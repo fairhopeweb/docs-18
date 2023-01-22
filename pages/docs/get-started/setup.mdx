@@ -75,7 +75,7 @@ In order to compile your TypeScript code and generate code from your `*.states` 
 {
   "scripts": {
     "generate:states": "states --output \"src/states.codegen.ts\" \"states/**/*.states\"",
-    "build": "tsc && npm run generate:states",
+    "build": "npm run generate:states && tsc",
     "watch": "tsc --watch"
   }
 }
