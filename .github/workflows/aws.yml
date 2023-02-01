@@ -7,6 +7,10 @@ on:
   push:
     branches: ['main']
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   AWS_REGION: us-east-1
   IAM_ROLE: arn:aws:iam::358674439294:role/GithubNeuledgeWebsite
