@@ -23,7 +23,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ runner.arch }}-node-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Setup Node.js
         if: steps.cache.outputs.cache-hit != 'true'
@@ -54,7 +54,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ runner.arch }}-node-modules-${{ hashFiles('**/yarn.lock') }}
           fail-on-cache-miss: true
 
       - name: Yarn lint:strict
@@ -78,7 +78,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ runner.arch }}-node-modules-${{ hashFiles('**/yarn.lock') }}
           fail-on-cache-miss: true
 
       - name: Yarn build
