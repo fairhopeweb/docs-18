@@ -12,14 +12,14 @@ This is the category state.
 """
 state Category {
   "The category id"
-  id: Number = 1
+  id: Integer = 1
 
   "The category name"
   name: String = 2
 }
 ```
 
-The `state` keyword is used to define a new state. The name of the state is `Category` and it has two fields: `id` and `name`. The `id` field is a `Number` and the `name` field is a `String`. The `= 1` and `= 2` are the field's indexes. The indexes are used to identify the fields in the state. Both the field names and indexes must be unique within the state.
+The `state` keyword is used to define a new state. The name of the state is `Category` and it has two fields: `id` and `name`. The `id` field is a `Integer` and the `name` field is a `String`. The `= 1` and `= 2` are the field's indexes. The indexes are used to identify the fields in the state. Both the field names and indexes must be unique within the state.
 
 ## Adding a primary key
 
@@ -28,7 +28,7 @@ To add a primary key to a state, you need to add the `@id` decorator to the fiel
 ```states filename="categories.states" /@id(auto: "increment")/
 state Category {
   "The category id"
-  @id(auto: "increment") id: Number = 1
+  @id(auto: "increment") id: Integer = 1
 
   "The category name"
   name: String = 2
@@ -56,7 +56,7 @@ In the example above, we only defined a single state. You can define as many sta
 
 ```states filename="posts.states"
 state DraftPost {
-  @id(auto: "increment") id: Number = 1
+  @id(auto: "increment") id: Integer = 1
   category?: Category = 2
   title: String = 3
   content?: String = 4
