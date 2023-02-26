@@ -20,13 +20,13 @@ Make sure you run `npm run build` and generate the states generated code before 
 To create a new entity, you need to calling `initOne` or `initMany` methods on the engine with the required initial state ot create. Only states with create mutations will be available to initialize:
 
 ```ts
-import { Category } from './states.codegen';
+import { DraftPost } from './states.codegen';
 
 const category = await engine
-  .initOne(Category)
+  .initOne(DraftPost)
   .create({
-    name: 'My category',
-    description: 'My category description',
+    title: 'My draft post'
+    content: 'This is a draft post',
   })
   .select();
 ```
@@ -43,9 +43,8 @@ import { Post } from './states.codegen';
 const updatedPost = await engine
   .alterUniqueOrThrow(...Post)
   .update({
-    title: data.title,
-    content: data.content,
-    category: { id: data.categoryId },
+    title: 'My updated post',
+    content: 'This is an updated post',
   })
   .unique({ id })
   .select();
@@ -55,7 +54,7 @@ Only the mutations that are available in all the requested states will be availa
 
 ## Querying entities
 
-Querying entities is done by calling the `find*` methods on the engine. You're required to pass the states you want to query and the query you want to apply:
+Querying entities is done by calling the `find*` methods on the engine. You're required to pass the states you want to query and the query you want to apply. The `.where()` method will accept a query object that will be validated against the states you're querying and the existing indexes you defeind on the states:
 
 ```ts
 import { Post } from './states.codegen';
@@ -66,4 +65,4 @@ const posts = await engine
   .select();
 ```
 
-Querying the entities is a completely type-safe operation. The query will be validated against the states you're querying and will fail to compile if the query is invalid.
+Querying the entities is a completely type-safe operation. The query will be validated against the states you're querying and will fail to compile if the query is invalid. If you need to query entities using arbitrary conditions, you can use the `.filter()` method, which will accept any field on the state, but won't be optimized by the state's indexes.

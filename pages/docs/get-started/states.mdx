@@ -97,3 +97,16 @@ state Category {
 ```
 
 The `@reference` decorator is used to create a relation between the `Category` state and the `Post` state. The `field` argument is used to specify the field name of the `Post` state that references the `Category` state.
+
+## Add composite indexes
+
+Composite indexes are used to create indexes on multiple fields. For example, we can create a composite index on the `category` and `title` fields of the `PublishedPost` state:
+
+```states filename="posts.states"
+@index(fields: { category: -1, title: 1 })
+state PublishedPost from DraftPost {
+  # ...
+}
+```
+
+The `@index` decorator takes a `fields` argument. The `fields` argument can be set to an array of field names, or to an object to create a composite index. The object keys are the field names and the object values are the sort order of the field. The sort order can be set to `1` for ascending order, or `-1` for descending order.
