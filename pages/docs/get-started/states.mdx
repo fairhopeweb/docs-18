@@ -83,3 +83,17 @@ either Post = DraftPost | PublishedPost
 ```
 
 The `either` keyword is used to create a new type that can be used to alias multiple states. The `Post` type can be used to reference any of the `DraftPost` or `PublishedPost` states.
+
+## Add relation fields
+
+Notice that our posts states have a `category` field that references the `Category` state. We can add a `posts` field to the `Category` state to create a relation between the two states:
+
+```states filename="categories.states"
+state Category {
+  # ...
+
+  @reference(field: 'category') posts: Post[] = 4
+}
+```
+
+The `@reference` decorator is used to create a relation between the `Category` state and the `Post` state. The `field` argument is used to specify the field name of the `Post` state that references the `Category` state.
