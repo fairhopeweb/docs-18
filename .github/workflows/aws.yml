@@ -4,7 +4,10 @@
 name: Deploy to Amazon ECS
 
 on:
-  push:
+  workflow_run:
+    workflows: ['Run NPM scripts']
+    types:
+      - completed
     branches: ['main']
 
 concurrency:

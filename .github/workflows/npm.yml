@@ -11,41 +11,75 @@ on:
 
 jobs:
   install:
+    name: Install
     runs-on: buildjet-2vcpu-ubuntu-2204-arm
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache Node.js modules
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Setup Node.js
+        if: steps.cache.outputs.cache-hit != 'true'
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 18
           cache: 'yarn'
-      - run: yarn --frozen-lockfile
+
+      - name: Yarn install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
 
   lint:
+    name: Lint
+    runs-on: buildjet-2vcpu-ubuntu-2204-arm
     needs: install
-    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
-          cache: 'yarn'
-      - run: yarn --frozen-lockfile
-      - run: yarn lint:strict
+          node-version: 18
+
+      - name: Restore Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          fail-on-cache-miss: true
+
+      - name: Yarn lint:strict
+        run: yarn lint:strict
 
   build:
+    name: Build
+    runs-on: buildjet-2vcpu-ubuntu-2204-arm
     needs: install
-    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
-          cache: 'yarn'
-      - run: yarn --frozen-lockfile
-      - run: yarn build
+          node-version: 18
+
+      - name: Restore Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          fail-on-cache-miss: true
+
+      - name: Yarn build
+        run: yarn build
