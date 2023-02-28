@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useConfig } from 'nextra-theme-docs';
 import { BrandLogo } from '@neuledge/brand';
+import { Analytics } from './components/analytics';
 
 const Head: React.FC = () => {
   const { asPath } = useRouter();
@@ -15,6 +16,8 @@ const Head: React.FC = () => {
         property="og:description"
         content={frontMatter.description || 'Neuledge Engine Documentation'}
       />
+
+      <Analytics />
     </>
   );
 };

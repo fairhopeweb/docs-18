@@ -24,6 +24,7 @@ env:
   ECS_TASK_DEFINITION: .aws/task-definition.json
   ECS_CONTAINER_NAME: docs
   ASSET_CDN: https://docs-cdn.neuledge.com
+  NEXT_PUBLIC_SEGMENT_WRITE_KEY: QojEDoX9vJMHyuHf4JoW3s07skT1XbTE
 
 permissions:
   id-token: write
@@ -69,6 +70,7 @@ jobs:
           cache-to: type=gha,mode=max
           build-args: |
             "ASSET_CDN=${{ env.ASSET_CDN }}"
+            "NEXT_PUBLIC_SEGMENT_WRITE_KEY=${{ env.NEXT_PUBLIC_SEGMENT_WRITE_KEY }}"
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
@@ -79,6 +81,7 @@ jobs:
           image: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ env.ECR_TAG }}
           environment-variables: |
             ASSET_CDN=${{ env.ASSET_CDN }}
+            NEXT_PUBLIC_SEGMENT_WRITE_KEY=${{ env.NEXT_PUBLIC_SEGMENT_WRITE_KEY }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
