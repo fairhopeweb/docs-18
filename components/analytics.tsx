@@ -2,6 +2,8 @@ import { SEGMENT_WRITE_KEY } from '@/config';
 import { useEffect } from 'react';
 
 export const Analytics = () => {
+  // Next.js <Script> component doesn't work on <head> tag
+
   useEffect(() => {
     if (!SEGMENT_WRITE_KEY) {
       return;
