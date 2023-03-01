@@ -1,0 +1,33 @@
+# String
+
+The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used to represent free-form human-readable text.
+
+## Signature
+
+```states
+String(
+  min?: Integer(min: 0),
+  max?: Integer(min: 0),
+  trim?: Boolean,
+)
+```
+
+### Arguments
+
+- `min` - The minimum byte length of the string.
+- `max` - The maximum byte length of the string.
+- `trim` - Whether to trim the string from whitespace characters before validation.
+
+## Examples
+
+### Basic
+
+`String`
+
+### Currency
+
+`String(min: 3, max: 3)`
+
+### Zip Code
+
+`String(min: 1, max: 5, trim: true)`
