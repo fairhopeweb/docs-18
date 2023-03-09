@@ -1,0 +1,25 @@
+# Email
+
+The `Email` scalar type represents a string email address.
+
+## Signature
+
+```states
+Email(
+  at?: String,
+)
+```
+
+### Arguments
+
+- `at` - Limit the email address to a specific domain.
+
+## Examples
+
+### Basic
+
+`Email`
+
+### Gmail only
+
+`Email(at: "gmail.com")`

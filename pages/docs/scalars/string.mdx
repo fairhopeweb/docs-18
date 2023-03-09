@@ -9,6 +9,9 @@ String(
   min?: Integer(min: 0),
   max?: Integer(min: 0),
   trim?: Boolean,
+  startsWith?: String,
+  endsWith?: String,
+  regex?: String,
 )
 ```
 
@@ -17,6 +20,9 @@ String(
 - `min` - The minimum byte length of the string.
 - `max` - The maximum byte length of the string.
 - `trim` - Whether to trim the string from whitespace characters before validation.
+- `startsWith` - The string must start with this value.
+- `endsWith` - The string must end with this value.
+- `regex` - The string must match this regular expression.
 
 ## Examples
 
@@ -30,4 +36,4 @@ String(
 
 ### Zip Code
 
-`String(min: 1, max: 5, trim: true)`
+`String(trim: true, regex: "[0-9]{1,5}")`
