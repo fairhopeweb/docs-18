@@ -36,4 +36,12 @@ module.exports = withNextra({
 
   assetPrefix: process.env.ASSET_CDN || undefined,
   output: 'standalone',
+
+  redirects: () => [
+    {
+      source: '/',
+      destination: '/docs',
+      permanent: false,
+    },
+  ],
 });
