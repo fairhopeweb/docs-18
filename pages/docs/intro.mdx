@@ -1,18 +1,25 @@
 # Welcome to the Neuledge documentation!
 
-Neuledge is a powerful tool that improves data integrity and simplifies business logic interfaces, helping to enforce business rules and ensure consistent data usage. With Neuledge, developers can easily access and manipulate data, while ensuring that all data is accurate and reliable.
+[Neuledge](https://neuledge.com) is an powerfull language that simplifies data management and enhances data integrity for databases. It enables you to define your data models and business logic in a precise and customizable way. The schema language supports customizable scalar types, providing type-safe data models and ensuring that you always get the data you expect.
 
-&nbsp;
+With Neuledge, you can create different states for the same entity, each with its own set of fields and mutations. These states are stored and accessed from the same table, with an abstraction layer that defines which fields are needed for each state. For example, you can define a "DraftPost" state with a set of fields and mutations, and then create a "PublishedPost" state that inherits from "DraftPost" and adds more fields and restrictions necessary for published posts.
 
-![Neuledge Engine](./client-server.svg)
+<br />
 
-&nbsp;
+```mermaid
+flowchart LR
+  DraftPost -->|publish| PublishedPost
+  DraftPost -->|delete| Void
+  PublishedPost -->|archive| ArchivedPost
+```
 
-Some of the key features of Neuledge include:
+<center>![states flowchart](./intro-flowchart.svg)</center>
 
-1. **Improved data integrity:** Neuledge ensures that all data is accurate and consistent, helping to prevent errors and inconsistencies.
-2. **Simplified business logic interfaces:** Neuledge makes it easy for developers to access and manipulate data, reducing the complexity of working with large data sets.
-3. **Enforced business rules:** Neuledge helps to ensure that data is used correctly and that business rules are followed, helping to prevent errors and improve efficiency.
+<br />
+
+The schema language is identical for relational and non-relational databases, giving you the flexibility to use it with any database of your choice. It allows you to define precise field types, validate data mutations, and enforce business rules across different states. Whether you are working with a small or complex data model, Neuledge makes it easy to manage and maintain your data.
+
+---
 
 In the next sections you will find all the necessary information to get started, including installation, configuration and usage instructions, as well as examples and troubleshooting tips.
 

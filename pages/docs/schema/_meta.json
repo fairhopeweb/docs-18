@@ -1,4 +1,9 @@
 {
   "intro": "Introduction",
-  "examples": "Examples"
+  "states": "Defining states",
+  "inheritance": "State inheritance",
+  "mutations": "Mutations",
+  "indexes": "Indexes and keys",
+  "documentation": "Code documentation",
+  "examples": "Schema examples"
 }
