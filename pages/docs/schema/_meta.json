@@ -2,8 +2,9 @@
   "intro": "Introduction",
   "states": "Defining states",
   "inheritance": "State inheritance",
+  "either": "Either states",
   "mutations": "Mutations",
   "indexes": "Indexes and keys",
-  "documentation": "Code documentation",
+  "documentation": "Documentation and deprecation",
   "examples": "Schema examples"
 }
