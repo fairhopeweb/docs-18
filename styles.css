@@ -1,0 +1,7 @@
+.dark .nx-text-primary-600 {
+  color: hsl(var(--nextra-primary-hue) 100% 65% / var(--tw-text-opacity));
+}
+
+html[class~='dark'] .dark\:nx-bg-primary-300\/10 {
+  background-color: hsl(var(--nextra-primary-hue) 100% 89%/0.1);
+}
