@@ -1,5 +1,5 @@
 {
-  "overview": {
+  "index": {
     "title": "Overview",
     "type": "page",
     "href": "/",
@@ -12,13 +12,11 @@
   "join": {
     "title": "Community",
     "type": "page",
-    "href": "/#join",
-    "newWindow": true
+    "href": "/#join"
   },
   "blog": {
     "title": "Blog",
     "type": "page",
-    "href": "/blog",
-    "newWindow": true
+    "href": "/blog"
   }
 }
