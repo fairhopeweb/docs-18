@@ -28,6 +28,7 @@ const config = {
   },
   logo: <BrandLogo style={{ height: '2.2rem' }} />,
   logoLink: '/',
+  primaryHue: { light: 281, dark: 290 },
   project: {
     link: 'https://github.com/neuledge/engine-js',
   },

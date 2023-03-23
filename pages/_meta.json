@@ -14,5 +14,11 @@
     "type": "page",
     "href": "/#join",
     "newWindow": true
+  },
+  "blog": {
+    "title": "Blog",
+    "type": "page",
+    "href": "/blog",
+    "newWindow": true
   }
 }
