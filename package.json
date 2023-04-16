@@ -25,12 +25,12 @@
     "vscode-neuledge-states": "^0.0.3"
   },
   "devDependencies": {
-    "@neuledge/eslint-config-next": "^1.0.0-alpha.18",
-    "@neuledge/tsconfig": "^1.0.0-alpha.17",
-    "@types/node": "18.11.18",
+    "@neuledge/eslint-config-next": "^1.0.1",
+    "@neuledge/tsconfig": "^2.0.0",
+    "@types/node": "^18.15.11",
     "eslint": "^8.38.0",
     "husky": "^8.0.3",
     "prettier": "^2.8.7",
-    "typescript": "^4.9.4"
+    "typescript": "^5.0.4"
   }
 }
