@@ -19,7 +19,7 @@
     "@neuledge/brand": "^1.0.0-alpha.3",
     "next": "^13.3.0",
     "nextra": "^2.4.0",
-    "nextra-theme-docs": "^2.3.0",
+    "nextra-theme-docs": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "vscode-neuledge-states": "^0.0.3"
