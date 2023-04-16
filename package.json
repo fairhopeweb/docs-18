@@ -5,8 +5,7 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "prepare": "yarn prepare:ts && yarn prepare:git",
-    "prepare:ts": "ts-patch install -s",
+    "prepare": "yarn prepare:git",
     "prepare:git": "husky install || echo \"skip husky\"",
     "start": "next start",
     "dev": "next dev",
